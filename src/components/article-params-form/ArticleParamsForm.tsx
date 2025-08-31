@@ -39,7 +39,6 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 
 	const handleResetAppState = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		console.log('сработала очистка');
 		setAppState(defaultArticleState);
 		setFormState(defaultArticleState);
 	};
@@ -82,7 +81,8 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 						title='шрифт'
 						selected={formState.fontFamilyOption}
 						options={fontFamilyOptions}
-						onChange={handleChangeField('fontFamilyOption')}></Select>
+						onChange={handleChangeField('fontFamilyOption')}
+					/>
 					<RadioGroup
 						name='шрифт'
 						title='размер шрифта'
@@ -93,17 +93,20 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 						title='цвет шрифта'
 						selected={formState.fontColor}
 						options={fontColors}
-						onChange={handleChangeField('fontColor')}></Select>
+						onChange={handleChangeField('fontColor')}
+					/>
 					<Select
 						title='цвет фона'
 						selected={formState.backgroundColor}
 						options={backgroundColors}
-						onChange={handleChangeField('backgroundColor')}></Select>
+						onChange={handleChangeField('backgroundColor')}
+					/>
 					<Select
 						title='ширина контента'
 						selected={formState.contentWidth}
 						options={contentWidthArr}
-						onChange={handleChangeField('contentWidth')}></Select>
+						onChange={handleChangeField('contentWidth')}
+					/>
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' type='reset' />
 						<Button title='Применить' type='submit' />
